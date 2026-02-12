@@ -1,0 +1,113 @@
+{% extends 'nav.html' %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home | [Company Name]</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero section">
+    <!-- Put your hero image path here -->
+    <div class="hero-bg" role="img" aria-label="Mother holding baby in soft natural light"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="container hero-content">
+      <div class="hero-grid">
+        <!-- Left side is intentionally empty because image is background.
+             If you want an actual image element later, you can add it here. -->
+        <div class="hero-spacer" aria-hidden="true"></div>
+
+        <div class="hero-text">
+          <p class="hero-quote">
+            Whenever and however you give birth, your experience will impact your
+            <span class="hl">emotions</span>, mind, body and your <span class="hl">spirit</span>.
+          </p>
+
+          <a class="btn btn-primary" href="#connect">
+            Let’s connect! Reach out to book your free consultation.
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO / MISSION -->
+  <main>
+    <section class="section mission" aria-label="Introduction and mission">
+      <div class="container section-grid">
+        <div class="section-text">
+          <h2 class="section-title">A Calm, Grounded Support System</h2>
+          <p class="section-body">
+            At Mind Body Soul Doula Care, we understand that the transition to
+motherhood encompasses the mind, body, and soul. Our mission is to
+strengthen, prepare, and support women through this transformative journey.
+It is our honor to walk alongside you during this sacred and profound season
+of life.
+          </p>
+        </div>
+
+        <div class="section-visual">
+          <div class="photo-collage" aria-label="Collage of prenatal, birth, and postpartum support images">
+            <!-- Replace these with real images -->
+            <figure class="photo-card">
+              <img src="images/prenatal.jpg" alt="Prenatal care support" />
+            </figure>
+            <figure class="photo-card">
+              <img src="images/birth-support.jpg" alt="Birth support" />
+            </figure>
+            <figure class="photo-card">
+              <img src="images/postpartum.jpg" alt="Postpartum support" />
+            </figure>
+            <figure class="photo-card">
+              <img src="images/nurturing.jpg" alt="Nurturing moments" />
+            </figure>
+
+            <div class="collage-overlay" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES / CLOSING -->
+    <section class="section closing" id="connect" aria-label="Service and closing section">
+      <div class="container closing-inner">
+        <h2 class="section-title centered">How I Can Help</h2>
+        <p class="section-body centered max">
+          We proudly support women in Edmonton and surrounding communities
+within a two-hour radius. (Some conditions may apply.)
+        </p>
+
+        <a class="btn btn-primary centered-btn" href="#">
+          Let’s Connect! Reach out for your free consultation today.
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> [Company Name]. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+{% endblock %}
