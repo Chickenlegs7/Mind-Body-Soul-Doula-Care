@@ -25,10 +25,21 @@ def contact():
 def home():
     return render_template('about-us.html', year=datetime.now().year)
 
-@app.route('/package')
+@app.route('/packages')
 def contact():
     return render_template('packages.html', year=datetime.now().year)
 
+@app.route('/doulas')
+def contact():
+    return render_template('meet-doulas.html', year=datetime.now().year)
+
+@app.route('/rental')
+def home():
+    return render_template('rentals.html', year=datetime.now().year)
+
+@app.route('/resources')
+def home():
+    return render_template('resources.html', year=datetime.now().year)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8080)
