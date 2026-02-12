@@ -18,27 +18,27 @@ def home():
     return render_template('home.html', year=datetime.now().year)
 
 @app.route('/connect')
-def contact():
+def connect():
     return render_template('connect.html', year=datetime.now().year)
 
 @app.route('/about')
-def home():
+def about():
     return render_template('about-us.html', year=datetime.now().year)
 
 @app.route('/packages')
-def contact():
+def packages():
     return render_template('packages.html', year=datetime.now().year)
 
 @app.route('/doulas')
-def contact():
+def doulas():
     return render_template('meet-doulas.html', year=datetime.now().year)
 
 @app.route('/rental')
-def home():
+def rental():
     return render_template('rentals.html', year=datetime.now().year)
 
 @app.route('/resources')
-def home():
+def resources():
     return render_template('resources.html', year=datetime.now().year)
 
 if __name__ == '__main__':

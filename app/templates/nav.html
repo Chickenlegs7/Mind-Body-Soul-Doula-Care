@@ -32,5 +32,10 @@
     <footer class="footer">
         <p class="footer-copyright">© {{ year }} </p>
     </footer>
+<script>
+  const btn = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".nav-links");
+  btn?.addEventListener("click", () => menu.classList.toggle("open"));
+</script>
 </body>
 </html>
