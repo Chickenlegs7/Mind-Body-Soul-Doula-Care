@@ -286,7 +286,7 @@ img{ max-width: 100%; display: block; }
 }
 
 /* =========================
-   NAVBAR (matches homepage)
+   NAVBAR (Option 2: stacked brand, one-line links)
    ========================= */
 
 .navbar{
@@ -294,44 +294,68 @@ img{ max-width: 100%; display: block; }
   top: 0;
   z-index: 50;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: .9rem 1.25rem;
-
-  background: rgba(255,245,230,.92); /* warm cream glass */
+  background: rgba(255,245,230,.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(139,107,94,.12);
 }
 
-/* Logo area */
-.logo{
-  display: flex;
+/* stacked layout wrapper */
+.navbar--stacked{
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* left spacer | center brand | right spacer */
   align-items: center;
-  gap: .75rem;
+  padding: .75rem 1.25rem;
+}
+
+/* Brand centered */
+.brand-stack{
+  grid-column: 2;
+  justify-self: center;
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .35rem;
+
+  text-decoration: none;
+  color: var(--taupe);
+  text-align: center;
 }
 
 .company-logo{
-  height: 44px;          /* adjust as needed */
+  height: 44px;
   width: auto;
   display: block;
-  border-radius: 10px;   /* soft */
+  border-radius: 10px;
 }
 
-/* Links */
+.brand-name{
+  font-family: var(--font-title); /* Playfair gives it a refined feel */
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: .2px;
+  line-height: 1.1;
+}
+
+/* Nav links: one line, centered beneath brand */
 .nav-links{
+  grid-column: 1 / -1; /* span full width under the brand */
+  justify-self: center;
+
   list-style: none;
   display: flex;
-  align-items: center;
-  gap: .25rem;           /* tighter; we’ll use padding on links */
-  margin: 0;
+  flex-wrap: nowrap;         /* keep on one line */
+  gap: .25rem;
+
+  margin: .65rem 0 0;
   padding: 0;
+
+  overflow-x: auto;          /* if screen is tight, allow gentle horizontal scroll */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;     /* Firefox hide */
 }
 
-.nav-links li{
-  margin: 0;
-}
+.nav-links::-webkit-scrollbar{ display: none; } /* Chrome/Safari hide */
 
 .nav-links a{
   display: inline-flex;
@@ -341,7 +365,7 @@ img{ max-width: 100%; display: block; }
   text-decoration: none;
   color: var(--taupe);
 
-  font-family: var(--font-cta); /* Poppins matches CTA vibe */
+  font-family: var(--font-cta); /* Poppins */
   font-weight: 600;
   font-size: .95rem;
 
@@ -350,11 +374,12 @@ img{ max-width: 100%; display: block; }
 
   transition: background-color .15s ease, transform .15s ease, opacity .15s ease;
   opacity: .92;
+  white-space: nowrap; /* prevent wrapping within a link */
 }
 
 .nav-links a:hover{
   opacity: 1;
-  background: rgba(227,197,127,.22); /* soft mustard tint */
+  background: rgba(227,197,127,.22);
   transform: translateY(-1px);
 }
 
@@ -362,17 +387,17 @@ img{ max-width: 100%; display: block; }
   transform: translateY(0);
 }
 
-/* Optional “active” state you can add with a class in templates:
-   <a class="active" ...>Home</a>
-*/
 .nav-links a.active{
-  background: rgba(255,209,102,.35); /* warm yellow tint */
+  background: rgba(255,209,102,.35);
   opacity: 1;
 }
 
-/* Hamburger button */
+/* Hamburger button (mobile only) */
 .menu-toggle{
-  display: none; /* shown on mobile */
+  grid-column: 3;
+  justify-self: end;
+
+  display: none;
   border: 1px solid rgba(139,107,94,.20);
   background: rgba(255,245,230,.85);
   color: var(--taupe);
@@ -396,6 +421,57 @@ img{ max-width: 100%; display: block; }
 
 .menu-toggle:active{
   transform: translateY(0);
+}
+
+/* =========================
+   MOBILE: collapse into hamburger dropdown
+   ========================= */
+@media (max-width: 900px){
+  .navbar--stacked{
+    grid-template-columns: 1fr auto 1fr;
+    padding: .75rem 1rem;
+  }
+
+  .menu-toggle{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* turn one-line list into dropdown on mobile */
+  .nav-links{
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    top: calc(100% + .6rem);
+
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: .35rem;
+
+    padding: .75rem;
+    border-radius: 18px;
+
+    background: rgba(255,245,230,.96);
+    border: 1px solid rgba(139,107,94,.14);
+    box-shadow: 0 18px 40px rgba(0,0,0,.14);
+
+    margin: 0;          /* override desktop margin */
+    overflow: visible;  /* override scroll */
+  }
+
+  .nav-links a{
+    width: 100%;
+    justify-content: flex-start;
+    padding: .75rem 1rem;
+    border-radius: 14px;
+    font-size: 1rem;
+  }
+
+  .nav-links.open{
+    display: flex;
+  }
 }
 
 /* =========================
@@ -446,4 +522,664 @@ img{ max-width: 100%; display: block; }
   }
 }
 
+/* =========================
+   ABOUT PAGE
+   ========================= */
 
+.about{
+  background: var(--bg-cream);
+}
+
+/* Two-column layout */
+.about-grid{
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Heading */
+.about-title{
+  font-family: var(--font-quote); /* Merriweather */
+  font-weight: 700;               /* semi-bold/bold */
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  color: var(--taupe);
+  margin: 0 0 .65rem;
+}
+
+.about-accent{
+  width: 86px;
+  height: 3px;
+  background: var(--mustard);
+  border-radius: 999px;
+  margin-bottom: 1.4rem;
+  opacity: .95;
+}
+
+/* Intro paragraph */
+.about-intro{
+  font-family: var(--font-body);  /* Lato */
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--taupe);
+  line-height: 1.8;
+  margin: 0 0 1.75rem;
+  max-width: 62ch;
+}
+
+/* Core Values */
+.values{
+  margin-top: 1rem;
+}
+
+.values-title, .philosophy-title{
+  font-family: var(--font-title); /* Playfair fits your site */
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin: 0 0 1rem;
+  color: var(--taupe);
+}
+
+.values-list{
+  display: grid;
+  gap: .9rem;
+}
+
+.value-card{
+  background: rgba(255,245,230,.70);
+  border: 1px solid rgba(139,107,94,.10);
+  border-radius: 16px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+
+.value-name{
+  margin: 0 0 .35rem;
+  font-family: var(--font-cta);      /* Poppins */
+  font-weight: 600;                  /* Semi-bold */
+  font-size: 1.05rem;
+  color: #9CAF88;                    /* Sage Green */
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+}
+
+/* optional tiny accent dot */
+.value-name::before{
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--mustard);
+  flex: 0 0 auto;
+  opacity: .95;
+}
+
+.value-body{
+  margin: 0;
+  font-family: var(--font-body);     /* Lato */
+  font-weight: 400;
+  color: var(--taupe);
+  line-height: 1.75;
+}
+
+/* Right column collage */
+.about-visual{
+  position: relative;
+}
+
+.about-collage{
+  position: sticky;
+  top: 96px; /* below navbar */
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: rgba(255,255,255,.35);
+
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  min-height: 520px;
+}
+
+.about-photo{
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+.about-photo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.95) contrast(.98);
+}
+
+/* subtle unifying overlay */
+.about-collage-overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(255,245,230,.16);
+  pointer-events: none;
+}
+
+/* Closing CTA */
+.about-cta{
+  background: #EBF2EC; /* very light sage */
+  padding: 4.25rem 0;
+  border-top: 1px solid rgba(139,107,94,.10);
+}
+
+.about-cta-inner{
+  text-align: center;
+  max-width: 900px;
+}
+
+.about-cta-text{
+  margin: 0 auto 1.25rem;
+  font-family: var(--font-quote); /* Merriweather */
+  font-weight: 700;
+  color: var(--taupe);
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  line-height: 1.4;
+  max-width: 42ch;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .about-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .about-collage{
+    position: relative;
+    top: auto;
+    min-height: 360px;
+  }
+}
+
+/* =========================
+   MEET THE DOULAS PAGE
+   ========================= */
+
+.doulas{
+  background: var(--bg-cream);
+}
+
+/* Page heading */
+.page-head{
+  padding-bottom: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.page-title{
+  font-family: var(--font-title); /* Playfair Display */
+  font-weight: 700;
+  font-size: clamp(2rem, 3vw, 2.7rem);
+  color: var(--taupe);
+  margin: 0 0 .65rem;
+}
+
+.page-accent{
+  width: 88px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--mustard);
+  opacity: .95;
+}
+
+/* Profile cards */
+.doula-card{
+  padding: 2.5rem 0; /* generous spacing */
+}
+
+.doula-card + .doula-card{
+  border-top: 1px solid rgba(139,107,94,.10);
+}
+
+/* Two-column layout */
+.doula-grid{
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 2.25rem;
+  align-items: center;
+}
+
+/* Photo styling */
+.doula-photo{
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: rgba(255,255,255,.35);
+  position: relative;
+}
+
+.doula-photo img{
+  width: 100%;
+  height: clamp(340px, 44vh, 520px);
+  object-fit: cover;
+  display: block;
+  filter: saturate(.95) contrast(.98);
+}
+
+/* soft unified overlay on photo (subtle) */
+.doula-photo::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,245,230,.10);
+  pointer-events: none;
+}
+
+/* Text styling */
+.doula-text{
+  background: rgba(255,245,230,.70);
+  border: 1px solid rgba(139,107,94,.10);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.5rem;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+
+.doula-name{
+  margin: 0 0 .9rem;
+  font-family: var(--font-cta); /* Poppins */
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: #9CAF88; /* Sage Green */
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+}
+
+/* optional mustard accent dot */
+.doula-name::before{
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--mustard);
+  opacity: .95;
+}
+
+.doula-bio{
+  font-family: var(--font-body); /* Lato */
+  color: var(--taupe);
+  line-height: 1.8;
+  font-size: 1.02rem;
+}
+
+.doula-bio p{
+  margin: 0 0 1rem;
+}
+
+.doula-bio p:last-child{
+  margin-bottom: 0;
+}
+
+/* Reverse layout for Mariah (text left, photo right)
+   Note: We keep the same HTML order and flip the grid placement via CSS.
+*/
+.doula-card--reverse .doula-grid{
+  grid-template-columns: 1.15fr 1fr;
+}
+
+.doula-card--reverse .doula-photo{
+  grid-column: 2;
+}
+
+.doula-card--reverse .doula-text{
+  grid-column: 1;
+}
+
+/* Closing CTA */
+.doulas-cta{
+  background: #EBF2EC; /* very light sage */
+  padding: 4.25rem 0;
+  border-top: 1px solid rgba(139,107,94,.10);
+}
+
+.doulas-cta-inner{
+  text-align: center;
+  max-width: 920px;
+}
+
+.doulas-cta-text{
+  margin: 0 auto 1.25rem;
+  font-family: var(--font-body); /* Lato */
+  font-size: 1.08rem;
+  color: var(--taupe);
+  line-height: 1.75;
+  max-width: 70ch;
+}
+
+/* Mobile stacking */
+@media (max-width: 900px){
+  .doula-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .doula-card--reverse .doula-photo,
+  .doula-card--reverse .doula-text{
+    grid-column: auto;
+  }
+
+  .doula-photo img{
+    height: 320px;
+  }
+
+  .doula-text{
+    padding: 1.2rem 1.2rem;
+  }
+}
+
+/* =========================
+   DOULAS PAGE UPDATES (add to style.css)
+   ========================= */
+
+.doulas{
+  background: var(--bg-cream);
+}
+
+/* Centered heading + subline */
+.page-head.centered{
+  text-align: center;
+}
+
+.page-subline{
+  margin: .75rem auto 0;
+  font-family: var(--font-body); /* Lato */
+  color: var(--taupe);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 62ch;
+}
+
+/* Optional soft divider between profiles */
+.soft-divider--doulas{
+  width: min(820px, 100%);
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(227,197,127,.75); /* Soft Mustard */
+  margin: 2.25rem auto;
+}
+
+/* Keep original alternating layout styles you already added:
+   .doula-grid, .doula-photo, .doula-text, .doula-card--reverse, etc.
+   The below is just minor refinements to match the new spec.
+*/
+
+.doula-name{
+  font-family: var(--font-cta); /* Poppins */
+  font-weight: 600;            /* Semi-bold */
+  color: #9CAF88;              /* Sage green */
+}
+
+/* Optional closing section */
+.doulas-close{
+  background: rgba(255,245,230,.55);
+  border-top: 1px solid rgba(139,107,94,.08);
+}
+
+.doulas-close-inner{
+  padding-top: .25rem;
+}
+
+/* Mobile: divider spacing a bit tighter */
+@media (max-width: 900px){
+  .soft-divider--doulas{
+    margin: 1.75rem auto;
+  }
+}
+
+/* =========================
+   POSTPARTUM PACKAGES
+   ========================= */
+
+.packages{
+  background: var(--bg-cream);
+}
+
+.packages .page-head.centered{
+  text-align: center;
+}
+
+.packages-intro{
+  margin: 0.75rem auto 1.25rem;
+  font-family: var(--font-body); /* Lato */
+  color: var(--taupe);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 74ch;
+}
+
+.packages-top-cta{
+  margin-top: .35rem;
+}
+
+/* Package card wrapper */
+.package-card{
+  padding: 2.75rem 0;
+}
+
+.package-card + .package-card{
+  border-top: 1px solid rgba(139,107,94,.10);
+}
+
+/* Two-column layout (image left, text right) */
+.package-grid{
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 2.25rem;
+  align-items: start;
+}
+
+/* Image */
+.package-photo{
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: rgba(255,255,255,.35);
+  position: relative;
+}
+
+.package-photo img{
+  width: 100%;
+  height: clamp(320px, 42vh, 520px);
+  object-fit: cover;
+  display: block;
+  filter: saturate(.95) contrast(.98);
+}
+
+/* subtle overlay for cohesion */
+.package-photo::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,245,230,.10);
+  pointer-events: none;
+}
+
+/* Content card */
+.package-content{
+  background: rgba(255,245,230,.70);
+  border: 1px solid rgba(139,107,94,.10);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.6rem;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+
+.package-title{
+  margin: 0 0 .6rem;
+  font-family: var(--font-title); /* Playfair */
+  font-weight: 700;
+  color: var(--taupe);
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  line-height: 1.25;
+}
+
+.package-accent{
+  width: 88px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--mustard);
+  opacity: .95;
+  margin-bottom: 1.1rem;
+}
+
+.package-desc{
+  margin: 0 0 1.1rem;
+  font-family: var(--font-body);
+  color: var(--taupe);
+  line-height: 1.75;
+  font-size: 1.03rem;
+}
+
+/* Bullet points */
+.package-points{
+  margin: 0 0 1.25rem;
+  padding-left: 1.1rem;
+  color: var(--taupe);
+  line-height: 1.75;
+}
+
+.package-points li{
+  margin-bottom: .6rem;
+}
+
+.package-points strong{
+  font-weight: 700;
+}
+
+/* Meta row (Duration / Visits / Investment) */
+.package-meta{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .8rem;
+  margin: 0 0 1.25rem;
+  padding: .9rem;
+  border-radius: 14px;
+  background: rgba(235,242,236,.55); /* very light sage tint */
+  border: 1px solid rgba(156,175,136,.20);
+}
+
+.package-meta .k{
+  display: block;
+  font-family: var(--font-cta); /* Poppins */
+  font-weight: 600;
+  font-size: .82rem;
+  letter-spacing: .2px;
+  color: #9CAF88; /* Sage green */
+  margin-bottom: .15rem;
+}
+
+.package-meta .v{
+  display: block;
+  font-family: var(--font-body);
+  color: var(--taupe);
+  font-weight: 400;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .package-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .package-photo img{
+    height: 320px;
+  }
+
+  .package-meta{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   HOME UPDATES (add to style.css)
+   ========================= */
+
+/* Hero: use warm professional mother–daughter photo + taupe overlay */
+.hero-bg{
+  /* Replace with your real team photo path */
+  background-image: url("images/hero-team.jpg");
+}
+
+/* Keep overlay 15–20% (already in your CSS as .20; adjust if desired) */
+/* .hero-overlay{ background: rgba(139,107,94,0.18); } */
+
+/* Center the hero card within the existing grid (keeps original look) */
+.hero-text--centered{
+  grid-column: 1 / -1;
+  justify-self: center;
+  text-align: center;
+  max-width: 760px;
+  padding: 1.75rem 1.75rem;
+}
+
+/* New hero subline */
+.hero-subline{
+  margin: 0 0 1.25rem;
+  font-family: var(--font-body); /* Lato */
+  font-size: 1.05rem;
+  color: var(--taupe);
+  line-height: 1.7;
+}
+
+/* Mission centered layout (no collage) */
+.mission-centered{
+  max-width: 980px;
+}
+
+/* Optional subtle divider line in Soft Mustard */
+.soft-divider{
+  width: min(680px, 100%);
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(227,197,127,.75); /* soft mustard */
+  margin: 2rem auto 1.75rem;
+}
+
+/* Small centered subheading */
+.mini-title{
+  font-family: var(--font-title); /* Playfair */
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--taupe);
+  margin: 0 0 .75rem;
+}
+
+/* Optional services overview section */
+.services-overview{
+  background: rgba(255,245,230,.55);
+  border-top: 1px solid rgba(139,107,94,.08);
+  border-bottom: 1px solid rgba(139,107,94,.08);
+}
+
+/* Closing polish */
+.muted{
+  opacity: .85;
+}
+
+.fineprint{
+  margin-top: .65rem;
+  font-size: .98rem;
+  opacity: .9;
+}
+
+.soft-close{
+  margin-top: 1.25rem;
+  font-family: var(--font-title);
+  font-weight: 600;
+  opacity: .9;
+}
+
+/* Mobile: keep hero centered */
+@media (max-width: 900px){
+  .hero-text--centered{
+    justify-self: stretch;
+    max-width: 760px;
+    text-align: center;
+  }
+}

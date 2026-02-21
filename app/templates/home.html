@@ -1,112 +1,103 @@
-{% extends 'nav.html' %}
+{% extends "nav.html" %}
 
-{% block title %}Contact Us{% endblock %}
+{% block title %}Home | Mind Body Soul Doula Care{% endblock %}
 
 {% block content %}
+<!-- HOME PAGE (no extra <html>/<head>/<body> needed because nav.html provides that) -->
 
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Home | [Company Name]</title>
+<section class="hero" aria-label="Hero section">
+  <!-- Hero image: warm professional photo of mother–daughter team -->
+  <div class="hero-bg" role="img" aria-label="Mother–daughter doula team in warm natural light"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <div class="container hero-content">
+    <div class="hero-grid">
+      <div class="hero-spacer" aria-hidden="true"></div>
 
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+      <div class="hero-text hero-text--centered">
+        <p class="hero-quote">
+          “Whenever and however you give birth, your experience will impact
+          your emotions, <span class="hl">mind</span>, <span class="hl">body</span>, and your
+          <span class="hl">spirit</span>.”
+        </p>
 
-   <section class="hero" aria-label="Hero section">
-    <!-- Put your hero image path here -->
-    <div class="hero-bg" role="img" aria-label="Mother holding baby in soft natural light"></div>
-    <div class="hero-overlay" aria-hidden="true"></div>
+        <p class="hero-subline">
+          A mother–daughter doula team offering steady, compassionate support through
+          pregnancy, birth, and postpartum.
+        </p>
 
-    <div class="container hero-content">
-      <div class="hero-grid">
-        <!-- Left side is intentionally empty because image is background.
-             If you want an actual image element later, you can add it here. -->
-        <div class="hero-spacer" aria-hidden="true"></div>
-
-        <div class="hero-text">
-          <p class="hero-quote">
-            “Whenever and however you give birth, your experience will impact your
-            <span class="hl">emotions</span>, mind, body and your <span class="hl">spirit</span>.”
-          </p>
-
-          <a class="btn btn-primary" href="#connect">
-            Let’s connect! Reach out to book your free consultation.
-          </a>
-        </div>
+        <a class="btn btn-primary" href="{{ url_for('connect') }}">
+          Let’s Begin Your Journey — Book Your Free Consultation
+        </a>
       </div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <!-- INTRO / MISSION -->
+  <section class="section mission" aria-label="Introduction and mission">
+    <div class="container mission-centered">
+      <h2 class="section-title centered">Supporting You — Mind, Body, and Soul</h2>
+
+      <p class="section-body centered max">
+        At Mind, Body, Soul Doula, we believe the transition into parenthood touches every part of who you are —
+        your mind, your body, and your soul.
+      </p>
+
+      <p class="section-body centered max">
+        As a mother–daughter team, we blend lived experience and modern birth knowledge to provide thoughtful,
+        personalized care. Together, we offer generational support that feels steady, informed, and deeply nurturing.
+      </p>
+
+      <p class="section-body centered max">
+        It is our privilege to walk beside you during this sacred and transformative season of life.
+      </p>
+
+      <div class="soft-divider" aria-hidden="true"></div>
+
+      <h3 class="mini-title centered">Why a Mother–Daughter Doula Team?</h3>
+
+      <p class="section-body centered max">
+        Two generations bring unique perspective. One of us carries the wisdom of experience, understanding the
+        emotional depth of motherhood and postpartum recovery. The other brings contemporary training,
+        evidence-based education, and hands-on birth support techniques. Together, we create a balanced, calm
+        presence — so you feel supported from every angle.
+      </p>
     </div>
   </section>
 
-  <!-- INTRO / MISSION -->
-  <main>
-    <section class="section mission" aria-label="Introduction and mission">
-      <div class="container section-grid">
-        <div class="section-text">
-          <h2 class="section-title">A Calm, Grounded Support System</h2>
-          <p class="section-body">
-            At Mind Body Soul Doula Care, we understand that the transition to
-motherhood encompasses the mind, body, and soul. Our mission is to
-strengthen, prepare, and support women through this transformative journey.
-It is our honor to walk alongside you during this sacred and profound season
-of life.
-          </p>
-        </div>
-
-        <div class="section-visual">
-          <div class="photo-collage" aria-label="Collage of prenatal, birth, and postpartum support images">
-            <!-- Replace these with real images -->
-            <figure class="photo-card">
-              <img src="images/prenatal.jpg" alt="Prenatal care support" />
-            </figure>
-            <figure class="photo-card">
-              <img src="images/birth-support.jpg" alt="Birth support" />
-            </figure>
-            <figure class="photo-card">
-              <img src="images/postpartum.jpg" alt="Postpartum support" />
-            </figure>
-            <figure class="photo-card">
-              <img src="images/nurturing.jpg" alt="Nurturing moments" />
-            </figure>
-
-            <div class="collage-overlay" aria-hidden="true"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES / CLOSING -->
-    <section class="section closing" id="connect" aria-label="Service and closing section">
-      <div class="container closing-inner">
-        <h2 class="section-title centered">How I Can Help</h2>
-        <p class="section-body centered max">
-          We proudly support women in Edmonton and surrounding communities
-within a two-hour radius. (Some conditions may apply.)
-        </p>
-
-        <a class="btn btn-primary centered-btn" href="#">
-          Let’s Connect! Reach out for your free consultation today.
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Mind Body Soul Doula Care. All rights reserved.</p>
+  <!-- SERVICES OVERVIEW (Optional addition) -->
+  <section class="section services-overview" aria-label="Birth and postpartum support overview">
+    <div class="container closing-inner">
+      <h2 class="section-title centered">Birth &amp; Postpartum Support</h2>
+      <p class="section-body centered max">
+        From prenatal preparation to postpartum recovery, our services are designed to nurture your mind,
+        support your body, and honor your soul.
+      </p>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+  <!-- SERVICE AREA / CLOSING -->
+  <section class="section closing" aria-label="Service area and closing call to action">
+    <div class="container closing-inner">
+      <p class="section-body centered max">
+        We proudly serve families in Edmonton and surrounding communities within a two-hour radius.
+        <span class="muted">(Some conditions may apply.)</span>
+      </p>
+
+      <a class="btn btn-primary centered-btn" href="{{ url_for('connect') }}">
+        Let’s Begin Your Journey — Book Your Free Consultation
+      </a>
+
+      <p class="section-body centered max fineprint">
+        Flexible payment plans available.
+      </p>
+
+      <p class="soft-close centered">
+        Walking beside you with calm, compassionate support
+      </p>
+    </div>
+  </section>
+</main>
 {% endblock %}

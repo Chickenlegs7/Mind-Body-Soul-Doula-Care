@@ -1,0 +1,148 @@
+{% extends "nav.html" %}
+{% block title %}About Us | Mind Body Soul Doula Care{% endblock %}
+
+{% block content %}
+<section class="about section" aria-label="About Mind Body Soul Doula Care">
+  <div class="container about-grid">
+    <!-- LEFT: TEXT -->
+    <div class="about-text">
+      <!-- Heading: Merriweather, Warm Taupe -->
+      <h1 class="about-title">About Mind Body Soul Doula Care</h1>
+      <!-- Optional accent line: Soft Mustard -->
+      <div class="about-accent" aria-hidden="true"></div> 
+
+      <!-- Intro paragraph: Lato, Warm Taupe, slightly increased line spacing -->
+      <p class="about-intro">
+        At Mind Body Soul Doula Care, we believe pregnancy, childbirth, and parenthood
+        touch every part of a woman’s being — mind, body, and soul. Just as the body
+        prepares for birth, the mind and spirit deserve nurturing, reassurance, and steady
+        support throughout this transformative season of life.
+      </p>
+
+      <h2 class='philosophy-title'> Our Philosophy </h2>
+      <!-- Intro paragraph: Lato, Warm Taupe, slightly increased line spacing -->
+      <p class="about-philosophy">
+      We believe true support honors the whole woman.
+      The <span class="hl">mind</span> deserves calm, clarity, and informed guidance.
+      The <span class="hl">body</span> deserves respect, trust, and evidence-based care.
+      The <span class="hl">soul</span> deserves presence, compassion, and space to unfold.
+	When these are supported together, women step into birth and motherhood feeling empowered
+	rather than overwhelmed — confident rather than uncertain.
+	You are not a task to manage or a birth plan to control.
+	You are a whole person moving through a sacred transition.
+	Our mother–daughter team we will walk beside you with knowledge, steadiness, and heart.
+      </p>
+
+
+      <!-- Core Values -->
+      <div class="values" aria-label="Core values">
+        <h2 class="values-title">Core Values</h2>
+
+        <div class="values-list">
+          <article class="value-card">
+            <h3 class="value-name">Autonomy</h3>
+            <p class="value-body">
+              We honor every woman’s right to make fully informed decisions regarding her
+              care during pregnancy, birth, and postpartum.
+              <span class="hl">Your body. Your baby. Your choices.</span>
+            </p>
+          </article>
+
+          <article class="value-card">
+            <h3 class="value-name">Empowerment</h3>
+            <p class="value-body">
+              We support women in trusting their bodies and intuition as they step confidently
+              into motherhood.
+            </p>
+          </article>
+
+          <article class="value-card">
+            <h3 class="value-name">Education &amp; Support</h3>
+            <p class="value-body">
+              Through evidence-based education, practical tools, and compassionate
+              presence, we help families feel prepared, informed, and supported.
+            </p>
+          </article>
+
+          <article class="value-card">
+            <h3 class="value-name">Individualized Care</h3>
+            <p class="value-body">
+              Every woman’s journey is unique. We ensure each client feels seen, heard, and
+              respected during this sacred and vulnerable time.
+            </p>
+          </article>
+
+          <article class="value-card">
+            <h3 class="value-name">Compassionate, Inclusive Care</h3>
+            <p class="value-body">
+              Every woman deserves skilled and empathetic support — whether birthing at
+              home or in hospital, experiencing a physiological or medically managed birth,
+              and regardless of race, faith, or social circumstances.
+            </p>
+          </article>
+
+          <article class="value-card">
+            <h3 class="value-name">Informed, Loving Support</h3>
+            <p class="value-body">
+              We guide women with both knowledge and heart, supporting not only their birth
+              experience but the beginning of their motherhood journey.
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: IMAGERY (soft, natural light, warm tones) -->
+    <div class="about-visual" aria-label="Supportive birth and postpartum imagery">
+      <div class="about-collage">
+        <figure class="about-photo">
+          <img
+            src="{{ url_for('static', filename='photos/about/hands.jpg') }}"
+            alt="Close-up of supportive hands during labor"
+            loading="lazy"
+          />
+        </figure>
+
+        <figure class="about-photo">
+          <img
+            src="{{ url_for('static', filename='photos/about/skin-to-skin.jpg') }}"
+            alt="Calm postpartum moment with baby skin-to-skin"
+            loading="lazy"
+          />
+        </figure>
+
+        <figure class="about-photo">
+          <img
+            src="{{ url_for('static', filename='photos/about/prenatal-education.jpg') }}"
+            alt="Quiet prenatal education setting in natural light"
+            loading="lazy"
+          />
+        </figure>
+
+        <figure class="about-photo">
+          <img
+            src="{{ url_for('static', filename='photos/about/quiet-strength.jpg') }}"
+            alt="Quiet strength portrait with warm tones"
+            loading="lazy"
+          />
+        </figure>
+
+        <div class="about-collage-overlay" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING CTA (Very Light Sage background) -->
+<section class="about-cta" aria-label="Connect for a free consultation">
+  <div class="container about-cta-inner">
+    <p class="about-cta-text">
+      You deserve support that honors your whole being — mind, body, and soul.
+    </p>
+
+    <a class="btn btn-primary" href="{{ url_for('connect') }}">
+      Let’s Connect! Reach out to schedule your free consultation.
+    </a>
+  </div>
+</section>
+{% endblock %}

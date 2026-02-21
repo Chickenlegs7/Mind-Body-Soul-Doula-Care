@@ -1,0 +1,112 @@
+{% extends "nav.html" %}
+{% block title %}Meet the Doulas | Mind Body Soul Doula Care{% endblock %}
+
+{% block content %}
+<section class="doulas section" aria-label="Meet the Doulas">
+  <div class="container">
+    <header class="page-head centered">
+      <h1 class="page-title">Meet the Doulas</h1>
+      <div class="page-accent" aria-hidden="true"></div>
+
+      <p class="page-subline">
+        A mother–daughter team walking beside you through birth and beyond.
+      </p>
+    </header>
+
+    <!-- Nicole: Photo left | Text right -->
+    <article class="doula-card">
+      <div class="doula-grid">
+        <div class="doula-photo">
+          <img
+            src="{{ url_for('static', filename='photos/doulas/nicole.jpg') }}"
+            alt="Nicole — Doula"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="doula-text">
+          <h2 class="doula-name">Nicole</h2>
+
+          <div class="doula-bio">
+            <p>Birth has shaped my life in more ways than I can count.</p>
+
+            <p>
+              As the mother of nine, I have experienced firsthand the strength, vulnerability, and
+              transformation that pregnancy and birth bring. Each of my own births taught me something new
+              — about surrender, resilience, trust, and the remarkable capacity of a woman’s body. Those
+              experiences ignited in me a deep love for supporting other women as they step into
+              motherhood.
+            </p>
+
+            <p>
+              For over twenty-five years, I have walked alongside women in this sacred season — offering
+              encouragement, perspective, and steady presence. As my children grew and began leaving
+              home, I felt called to devote myself more fully to this work. I completed my formal doula training
+              and began Mind, Body, Soul Doula alongside my youngest daughter.
+            </p>
+
+            <p>
+              Birth is not simply a physical event — it touches a woman’s mind, her body, and her soul. My
+              heart is to ensure that every woman feels seen, informed, respected, and empowered
+              throughout this profound transition.
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Soft divider (optional) -->
+    <div class="soft-divider soft-divider--doulas" aria-hidden="true"></div>
+
+    <!-- Mariah: Text left | Photo right -->
+    <article class="doula-card doula-card--reverse">
+      <div class="doula-grid">
+        <div class="doula-photo">
+          <img
+            src="{{ url_for('static', filename='photos/doulas/mariah.jpg') }}"
+            alt="Mariah — Doula"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="doula-text">
+          <h2 class="doula-name">Mariah</h2>
+
+          <div class="doula-bio">
+            <p>
+              Growing up in a large family, babies and motherhood were woven into the rhythm of my life.
+              From a young age, I developed a deep appreciation for the beauty and strength found in this
+              season.
+            </p>
+
+            <p>
+              As I support women now, I do so with both tenderness and intention — always learning, always
+              listening. I understand that pregnancy and birth can hold both joy and uncertainty, and I value
+              being a steady, reassuring presence during this transformative time.
+            </p>
+
+            <p>
+              I am currently training as a full-spectrum doula and have a particular interest in nutrition that
+              strengthens and prepares the body for pregnancy and childbirth. I believe that when a woman
+              feels informed in her mind, supported in her body, and steady in her spirit, she can approach
+              birth with greater peace and confidence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Optional closing section (recommended) -->
+<section class="doulas-close section" aria-label="Two generations one steady presence">
+  <div class="container doulas-close-inner">
+    <h2 class="section-title centered">Two Generations. One Steady Presence.</h2>
+    <p class="section-body centered max">
+      Together, we offer balanced, thoughtful support — blending lived experience with modern birth
+      knowledge. Our goal is simple: that you feel calm, confident, and deeply supported every step of
+      the way.
+    </p>
+  </div>
+</section>
+{% endblock %}

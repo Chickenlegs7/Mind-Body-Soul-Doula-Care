@@ -1,41 +1,68 @@
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>{% block title %}Mind Body Soul Doula Care{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="logo">
-		<a href="{{ url_for('home') }}"><img class="company-logo" src="{{ url_for('static', filename='photos/') }}"></a>
-        </div>
-	<button class="menu-toggle">&#9776;</button> <!-- Hamburger Icon -->
-        <ul class="nav-links">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('about') }}">About Us</a></li>
-	    <li><a href="{{ url_for('doulas') }}">Meet The Doulas</a></li>
-            <li><a href="{{ url_for('packages') }}">Packages</a></li>
-	    <li><a href="{{ url_for('rental') }}">Rentals</a></li>
-	    <li><a href="{{ url_for('resources') }}">Resources</a></li>
-            <li><a href="{{ url_for('connect') }}">Connect With Us</a></li>
-        </ul>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+
+  <body>
+    <!-- Navigation Bar (Option 2: stacked centered brand + one-line nav) -->
+    <nav class="navbar navbar--stacked">
+      <a
+        class="brand-stack"
+        href="{{ url_for('home') }}"
+        aria-label="Mind Body Soul Doula Care Home"
+      >
+        <img
+          class="company-logo"
+          src="{{ url_for('static', filename='photos/logo.png') }}"
+          alt="Mind Body Soul Doula Care logo"
+        />
+        <span class="brand-name">Mind Body Soul Doula Care</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        &#9776;
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('doulas') }}">Meet the Doulas</a></li>
+        <li><a href="{{ url_for('birth') }}"> Birth</a></li>
+	<li><a href="{{ url_for('postpartum') }}"> Postpartum</a></li>
+        <li><a href="{{ url_for('resources') }}">Resources</a></li>
+        <li><a href="{{ url_for('connect') }}">Contact</a></li>
+      </ul>
     </nav>
 
     <!-- Main Content Area -->
-    <div class="content">
-	    {% block content %}{% endblock %}
-    </div>
+    <main class="content">
+      {% block content %}{% endblock %}
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <p class="footer-copyright">© {{ year }} </p>
+      <p class="footer-copyright">© {{ year }}</p>
     </footer>
-<script>
-  const btn = document.querySelector(".menu-toggle");
-  const menu = document.querySelector(".nav-links");
-  btn?.addEventListener("click", () => menu.classList.toggle("open"));
-</script>
-</body>
+
+    <script>
+      const btn = document.querySelector(".menu-toggle");
+      const menu = document.querySelector(".nav-links");
+
+      btn?.addEventListener("click", () => {
+        const open = menu.classList.toggle("open");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    </script>
+  </body>
 </html>

@@ -25,9 +25,13 @@ def connect():
 def about():
     return render_template('about-us.html', year=datetime.now().year)
 
-@app.route('/packages')
-def packages():
-    return render_template('packages.html', year=datetime.now().year)
+@app.route('/birth')
+def birth():
+    return render_template('birth.html', year=datetime.now().year)
+
+@app.route('/postpartum')
+def postpartum():
+    return render_template('postpartum.html', year=datetime.now().year)
 
 @app.route('/doulas')
 def doulas():

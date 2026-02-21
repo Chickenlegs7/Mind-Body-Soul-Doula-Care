@@ -1,0 +1,109 @@
+{% extends "nav.html" %}
+{% block title %}Postpartum Packages | Mind Body Soul Doula Care{% endblock %}
+
+{% block content %}
+<section class="packages section" aria-label="Postpartum Packages">
+  <div class="container">
+    <header class="page-head centered">
+      <h1 class="page-title">Postpartum Packages</h1>
+      <div class="page-accent" aria-hidden="true"></div>
+
+      <p class="packages-intro">
+        Becoming a parent is a profound and beautiful journey, but the early weeks can also
+        feel overwhelming. Our postpartum packages are designed to support your mind,
+        body, and soul, helping you feel confident, cared for, and connected as you and
+        your family adjust to this new chapter.
+      </p>
+
+      <a class="btn btn-primary packages-top-cta" href="{{ url_for('connect') }}">
+        Let’s Get Started – Book Your Free Consultation
+      </a>
+    </header>
+
+    <!-- Package A -->
+    <article class="package-card" aria-label="First Steps package">
+      <div class="package-grid">
+        <div class="package-photo">
+          <img
+            src="{{ url_for('static', filename='photos/packages/first-steps.jpg') }}"
+            alt="Soft-focus mother and baby moment"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="package-content">
+          <h2 class="package-title">First Steps – Nurturing Care for Life’s First Weeks</h2>
+          <div class="package-accent" aria-hidden="true"></div>
+
+          <p class="package-desc">
+            A supportive hand to guide you through the first weeks of parenthood. First Steps is
+            perfect for new parents who want reassurance, confidence, and practical guidance
+            as they learn to care for their newborn. We help you feel calm, capable, and deeply
+            connected during this special—but sometimes overwhelming—time.
+          </p>
+
+          <ul class="package-points">
+            <li><strong>Mind:</strong> Emotional support to ease worries and build confidence.</li>
+            <li><strong>Body:</strong> Practical newborn care, postpartum recovery tips, and light household support.</li>
+            <li><strong>Soul:</strong> Gentle bonding practices and mindful ways to nurture your connection with your baby.</li>
+            <li><strong>Partner Support:</strong> Support to help partners feel confident, included, and engaged.</li>
+          </ul>
+
+          <div class="package-meta">
+            <div><span class="k">Duration</span><span class="v">4 weeks</span></div>
+            <div><span class="k">Visits</span><span class="v">2 per week (2–3 hours each)</span></div>
+            <div><span class="k">Starting Investment</span><span class="v">From $500</span></div>
+          </div>
+
+          <a class="btn btn-primary" href="{{ url_for('connect') }}">
+            Let’s get started—book your free consultation today!
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Package B -->
+    <article class="package-card" aria-label="Side by Side package">
+      <div class="package-grid">
+        <div class="package-photo">
+          <img
+            src="{{ url_for('static', filename='photos/packages/side-by-side.jpg') }}"
+            alt="Warm family connection in natural light"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="package-content">
+          <h2 class="package-title">Side by Side – Continued Care for Healing, Confidence, and New Beginnings</h2>
+          <div class="package-accent" aria-hidden="true"></div>
+
+          <p class="package-desc">
+            Your companion through the first months of parenthood. Side by Side is designed
+            for families who want ongoing support as they heal, grow confident, and transition
+            smoothly into life with a new baby. Together, we help your family thrive, guiding you
+            through the joys and challenges of early parenthood.
+          </p>
+
+          <ul class="package-points">
+            <li><strong>Mind:</strong> Emotional coaching to ease stress and support confidence.</li>
+            <li><strong>Body:</strong> Hands-on newborn care, sleep guidance, meal prep, and optional overnight support.</li>
+            <li><strong>Soul:</strong> Gentle bonding exercises and mindful family rituals to nurture connection.</li>
+            <li><strong>Partner Support:</strong> Continued guidance to help partners feel capable and included.</li>
+          </ul>
+
+          <div class="package-meta">
+            <div><span class="k">Duration</span><span class="v">6–8 weeks</span></div>
+            <div><span class="k">Visits</span><span class="v">3–5 per week (2–4 hours each)</span></div>
+            <div><span class="k">Starting Investment</span><span class="v">From $1,200</span></div>
+          </div>
+
+          <a class="btn btn-primary" href="{{ url_for('connect') }}">
+            Let’s get started—book your free consultation today!
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+{% endblock %}
