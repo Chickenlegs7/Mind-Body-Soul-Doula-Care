@@ -37,13 +37,9 @@ def postpartum():
 def doulas():
     return render_template('meet-doulas.html', year=datetime.now().year)
 
-@app.route('/rental')
-def rental():
-    return render_template('rentals.html', year=datetime.now().year)
-
-@app.route('/resources')
-def resources():
-    return render_template('resources.html', year=datetime.now().year)
+@app.route('/workshops')
+def workshops():
+    return render_template('workshops.html', year=datetime.now().year)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8080)

@@ -1,0 +1,88 @@
+{% extends "nav.html" %}
+{% block title %}Connect With Us | Mind Body Soul Doula Care{% endblock %}
+
+{% block content %}
+<section class="contact section" aria-label="Connect with us">
+  <div class="container">
+    <header class="contact-head">
+      <h1 class="contact-title">Let’s Begin with a Conversation</h1>
+      <div class="page-accent" aria-hidden="true"></div>
+
+      <p class="contact-intro">
+        Every journey into birth and parenthood is deeply personal. Whether you’re ready to move forward or simply
+        exploring your options, we would be honored to connect with you.
+      </p>
+
+      <p class="contact-intro">
+        As a mother–daughter doula team, we bring two generations of perspective and care to every family we serve.
+        This is a space to ask questions, share your hopes, and begin feeling supported from the very first
+        conversation.
+      </p>
+    </header>
+
+    <section class="contact-form-wrap" aria-label="Consultation request form">
+      <h2 class="contact-subtitle">Schedule Your Complimentary Consultation</h2>
+
+      <!-- Swap action/method to match your Flask handling -->
+      <form class="contact-form" action="{{ url_for('connect') }}" method="post">
+        <div class="field">
+          <label for="full_name">Full Name</label>
+          <input id="full_name" name="full_name" type="text" autocomplete="name" required />
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone <span class="optional">(optional)</span></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" />
+        </div>
+
+        <div class="field">
+          <label for="due_date">Estimated Due Date</label>
+          <input id="due_date" name="due_date" type="date" />
+        </div>
+
+        <div class="field">
+          <label for="support_type">Type of Support</label>
+          <select id="support_type" name="support_type" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="birth">Birth</option>
+            <option value="postpartum">Postpartum</option>
+            <option value="both">Both</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="referral">How did you hear about us? <span class="optional">(optional)</span></label>
+          <input id="referral" name="referral" type="text" />
+        </div>
+
+        <div class="field field--full">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">
+            Let’s Begin Your Journey — Book Your Free Consultation
+          </button>
+
+          <p class="contact-flex">Flexible payment plans available.</p>
+        </div>
+      </form>
+    </section>
+
+    <section class="contact-area" aria-label="Service area statement">
+      <p class="contact-area-text">
+        We proudly serve families in Edmonton and surrounding communities within a two-hour radius, including
+        St. Albert, Sherwood Park, Spruce Grove, Leduc, Beaumont, and Fort Saskatchewan. Some conditions may apply.
+      </p>
+    </section>
+
+    <p class="contact-close">Walking beside you with calm, compassionate support.</p>
+  </div>
+</section>
+{% endblock %}

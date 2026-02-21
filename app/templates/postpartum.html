@@ -1,0 +1,166 @@
+{% extends "nav.html" %}
+{% block title %}Postpartum | Mind Body Soul Doula Care{% endblock %}
+
+{% block content %}
+<section class="postpartum section" aria-label="Postpartum Packages">
+  <div class="container">
+    <header class="pp-head">
+      <h1 class="pp-title">Postpartum Packages</h1>
+      <div class="pp-accent" aria-hidden="true"></div>
+      <p class="pp-subline">
+        Gentle support as you settle into life with your baby — mind, body, and soul.
+      </p>
+    </header>
+
+    <div class="pp-intro">
+      <p class="pp-card-title" style="margin-bottom:.5rem;">MBS Postpartum Packages</p>
+      <p style="margin-top:0;">
+        <strong>Gentle Support for Your Transition Into Parenthood</strong>
+      </p>
+
+      <p>
+        The early weeks with your baby are tender, transformative, and sometimes overwhelming. You deserve to
+        feel cared for, encouraged, and confidently supported as your family adjusts to this new season.
+      </p>
+      <p>
+        Our postpartum packages nurture your mind, support your body, and honor your soul — and every visit is
+        tailored to your preferences, routines, and family goals.
+      </p>
+    </div>
+
+    <!-- Package 1 -->
+    <article class="pp-card" aria-label="First Steps postpartum package">
+      <h2 class="pp-card-title">First Steps – Nurturing Care for Life’s First Weeks</h2>
+      <div class="pp-card-accent" aria-hidden="true"></div>
+
+      <p class="pp-card-intro">
+        A supportive presence as you settle into the rhythm of life with your newborn. Ideal for families seeking
+        reassurance, practical guidance, and steady encouragement during the early weeks.
+      </p>
+
+      <div class="pp-breakdown" aria-label="Support breakdown">
+        <div class="pp-row">
+          <div class="pp-label">Mind</div>
+          <div class="pp-body">Emotional support to ease worries and build confidence.</div>
+        </div>
+        <div class="pp-row">
+          <div class="pp-label">Body</div>
+          <div class="pp-body">Practical newborn care, postpartum recovery guidance, and light household support.</div>
+        </div>
+        <div class="pp-row">
+          <div class="pp-label">Soul</div>
+          <div class="pp-body">Gentle bonding practices to deepen connection with your baby.</div>
+        </div>
+        <div class="pp-row">
+          <div class="pp-label">Partner Support</div>
+          <div class="pp-body">Encouragement and guidance so partners feel confident and included.</div>
+        </div>
+      </div>
+
+      <p class="pp-note">
+        As a mother–daughter doula team, we offer both lived maternal insight and contemporary postpartum support —
+        providing balanced, thoughtful care during this tender season. Support is shaped around what you need most
+        each visit.
+      </p>
+
+      <div class="pp-meta" aria-label="Duration and visits">
+        <div>
+          <span class="pp-k">Duration</span>
+          <span class="pp-v">4 weeks</span>
+        </div>
+        <div>
+          <span class="pp-k">Visits</span>
+          <span class="pp-v">2 per week (2–3 hours each)</span>
+        </div>
+      </div>
+
+      <div class="pp-invest" aria-label="Investment">
+        <span class="pp-invest-k">Investment</span>
+        <span class="pp-invest-v">From $500</span>
+      </div>
+    </article>
+
+    <!-- Optional image between packages (enable if you want) -->
+    {#
+    <div class="pp-image" aria-label="Soft-focus postpartum moment">
+      <img
+        src="{{ url_for('static', filename='photos/postpartum/soft-moment.jpg') }}"
+        alt="Mother resting with baby in warm natural light"
+        loading="lazy"
+      />
+    </div>
+    #}
+
+    <!-- Package 2 -->
+    <article class="pp-card" aria-label="Side by Side postpartum package">
+      <h2 class="pp-card-title">Side by Side – Continued Care for Healing, Confidence, and New Beginnings</h2>
+      <div class="pp-card-accent" aria-hidden="true"></div>
+
+      <p class="pp-card-intro">
+        Ongoing support for families who desire steady presence as they heal, grow in confidence, and adjust to life
+        with their baby.
+      </p>
+
+      <p class="pp-note"><strong>Includes everything in First Steps, plus:</strong></p>
+
+      <div class="pp-breakdown" aria-label="Support breakdown">
+        <div class="pp-row">
+          <div class="pp-label">Mind</div>
+          <div class="pp-body">Emotional coaching to reduce stress and strengthen confidence.</div>
+        </div>
+        <div class="pp-row">
+          <div class="pp-label">Body</div>
+          <div class="pp-body">
+            Hands-on newborn care, sleep guidance, meal preparation, and optional overnight support.
+          </div>
+        </div>
+        <div class="pp-row">
+          <div class="pp-label">Soul</div>
+          <div class="pp-body">
+            Gentle bonding exercises and mindful family rhythms to nurture connection.
+          </div>
+        </div>
+        <div class="pp-row">
+          <div class="pp-label">Partner Support</div>
+          <div class="pp-body">Continued guidance to help partners feel capable and engaged.</div>
+        </div>
+      </div>
+
+      <p class="pp-note">
+        Care remains flexible and thoughtfully adapted to your family’s rhythm and evolving needs.
+      </p>
+
+      <div class="pp-meta" aria-label="Duration and visits">
+        <div>
+          <span class="pp-k">Duration</span>
+          <span class="pp-v">6–8 weeks</span>
+        </div>
+        <div>
+          <span class="pp-k">Visits</span>
+          <span class="pp-v">3–5 per week (2–4 hours each)</span>
+        </div>
+      </div>
+
+      <div class="pp-invest" aria-label="Investment">
+        <span class="pp-invest-k">Investment</span>
+        <span class="pp-invest-v">From $1,200</span>
+      </div>
+    </article>
+
+    <!-- Emotional Closing -->
+    <section class="pp-close" aria-label="Postpartum closing">
+      <h2 class="pp-close-title">Supported. Steady. Connected.</h2>
+      <p class="pp-close-text">
+        The transition into parenthood is not meant to be navigated alone. We are here to nurture your mind, support
+        your body, and honor your soul — so you feel steady, cared for, and confident in this new chapter.
+      </p>
+
+      <a class="btn btn-primary" href="{{ url_for('connect') }}">
+        Let’s Begin Your Journey — Book Your Free Consultation
+      </a>
+
+      <p class="pp-flex">Flexible payment plans available.</p>
+    </section>
+  </div>
+</section>
+{% endblock %}

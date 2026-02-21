@@ -1,0 +1,181 @@
+{% extends "nav.html" %}
+{% block title %}Birth | Mind Body Soul Doula Care{% endblock %}
+
+{% block content %}
+<section class="birth section" aria-label="Birth packages">
+  <div class="container">
+    <header class="page-head centered">
+      <h1 class="page-title">Birth</h1>
+      <div class="page-accent" aria-hidden="true"></div>
+    </header>
+
+    <!-- Package 1 -->
+    <article class="birth-card" aria-label="Foundational Birth package">
+      <h2 class="birth-title">Foundational Birth – Confident, Steady Support</h2>
+      <div class="birth-accent" aria-hidden="true"></div>
+
+      <p class="birth-intro">
+        A supportive foundation for families seeking reassurance and hands-on guidance throughout pregnancy and labour.
+      </p>
+
+      <div class="birth-breakdown">
+        <div class="bd-row">
+          <div class="bd-label">Mind</div>
+          <div class="bd-body">
+            Prenatal education, virtual check-ins, and 24/7 phone support beginning at 37 weeks to ease fears and build confidence.
+          </div>
+        </div>
+
+        <div class="bd-row">
+          <div class="bd-label">Body</div>
+          <div class="bd-body">
+            Continuous in-person labor support with comfort measures, including TENS machine.
+          </div>
+        </div>
+
+        <div class="bd-row">
+          <div class="bd-label">Soul</div>
+          <div class="bd-body">
+            Calm, grounding presence to help you feel empowered and safe.
+          </div>
+        </div>
+
+        <div class="bd-row">
+          <div class="bd-label">Partner Support</div>
+          <div class="bd-body">
+            Encouragement and guidance so partners feel confident and involved.
+          </div>
+        </div>
+      </div>
+
+      <p class="birth-note">
+        As a mother–daughter doula team, we bring both lived experience and contemporary birth knowledge to support you with steadiness and care.
+        Care is personalized to align with your goals, comfort level, and birth preferences.
+      </p>
+
+      <h3 class="birth-includes-title">Includes</h3>
+      <ul class="birth-includes">
+        <li>2 prenatal visits</li>
+        <li>Unlimited virtual support</li>
+        <li>Continuous labor support</li>
+        <li>2–3 hours immediate postpartum care</li>
+        <li>1 postpartum visit</li>
+        <li>Welcome and closing gifts</li>
+      </ul>
+
+      <div class="birth-price">
+        <span class="price-label">Investment</span>
+        <span class="price-value">$1,100</span>
+      </div>
+
+      <a class="btn btn-primary birth-cta" href="{{ url_for('connect') }}">
+        Let’s Begin Your Birth Journey — Book Your Free Consultation
+      </a>
+    </article>
+
+    <!-- Soft divider (optional) -->
+    <div class="soft-divider soft-divider--doulas" aria-hidden="true"></div>
+
+    <!-- Package 2 -->
+    <article class="birth-card" aria-label="Nurturing Birth package">
+      <h2 class="birth-title">Nurturing Birth – Wholehearted Care Every Step of the Way</h2>
+      <div class="birth-accent" aria-hidden="true"></div>
+
+      <p class="birth-intro">
+        For families desiring deeper preparation and added reassurance during their transition into parenthood.
+      </p>
+
+      <p class="birth-note">
+        Includes everything in <strong>Foundational Birth</strong>, plus:
+      </p>
+
+      <div class="birth-breakdown">
+        <div class="bd-row">
+          <div class="bd-label">Mind</div>
+          <div class="bd-body">
+            Additional prenatal time for emotional and mental preparation.
+          </div>
+        </div>
+
+        <div class="bd-row">
+          <div class="bd-label">Body</div>
+          <div class="bd-body">
+            Two postpartum care visits with light household and newborn support.
+          </div>
+        </div>
+
+        <div class="bd-row">
+          <div class="bd-label">Soul</div>
+          <div class="bd-body">
+            Gentle guidance to help you feel calm, connected, and supported.
+          </div>
+        </div>
+
+        <div class="bd-row">
+          <div class="bd-label">Partner Support</div>
+          <div class="bd-body">
+            Continued inclusion and steady encouragement.
+          </div>
+        </div>
+      </div>
+
+      <p class="birth-note">
+        All support remains flexible and thoughtfully tailored to your evolving needs.
+      </p>
+
+      <div class="birth-price">
+        <span class="price-label">Investment</span>
+        <span class="price-value">$1,300</span>
+      </div>
+
+      <a class="btn btn-primary birth-cta" href="{{ url_for('connect') }}">
+        Let’s Begin Your Birth Journey — Book Your Free Consultation
+      </a>
+    </article>
+
+    <!-- Soft divider (optional) -->
+    <div class="soft-divider soft-divider--doulas" aria-hidden="true"></div>
+
+    <!-- Package 3 -->
+    <article class="birth-card" aria-label="Birth and Beyond package">
+      <h2 class="birth-title">Birth &amp; Beyond – Support That Continues After Baby Arrives</h2>
+      <div class="birth-accent" aria-hidden="true"></div>
+
+      <p class="birth-intro">
+        For families who want extended care as they recover, bond, and settle into life with their baby.
+      </p>
+
+      <p class="birth-note">
+        Includes everything in <strong>Nurturing Birth</strong>, plus:
+      </p>
+
+      <p class="birth-note">
+        Additional postpartum visits to nurture recovery, bonding, and daily life adjustment — shaped around what matters most to you and your family.
+      </p>
+
+      <div class="birth-price">
+        <span class="price-label">Investment</span>
+        <span class="price-value">$1,500</span>
+      </div>
+
+      <a class="btn btn-primary birth-cta" href="{{ url_for('connect') }}">
+        Let’s Begin Your Birth Journey — Book Your Free Consultation
+      </a>
+    </article>
+
+    <!-- Closing -->
+    <section class="birth-close" aria-label="Birth page closing statement">
+      <h2 class="birth-close-title">Your Birth. Your Power. Your Support.</h2>
+
+      <p class="birth-close-text">
+        You deserve to feel heard, honored, and cared for every step of the way. We are here to nurture your mind,
+        support your body, and honor your soul through this beautiful transition.
+      </p>
+
+      <a class="btn btn-primary" href="{{ url_for('connect') }}">
+        Let’s Begin Your Birth Journey — Book Your Free Consultation
+      </a>
+    </section>
+  </div>
+</section>
+{% endblock %}
