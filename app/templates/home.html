@@ -3,10 +3,10 @@
 {% block title %}Home | Mind Body Soul Doula Care{% endblock %}
 
 {% block content %}
-<!-- HOME PAGE (no extra <html>/<head>/<body> needed because nav.html provides that) -->
+<!-- HOME PAGE -->
 
 <section class="hero" aria-label="Hero section">
-  <!-- Hero image: warm professional photo of mother–daughter team -->
+  <!-- Image #1 (Album photo 1): set in CSS .hero-bg background-image -->
   <div class="hero-bg" role="img" aria-label="Mother–daughter doula team in warm natural light"></div>
   <div class="hero-overlay" aria-hidden="true"></div>
 
@@ -45,6 +45,15 @@
         your mind, your body, and your soul.
       </p>
 
+      <!-- Image #2 (Album photo 2): calm supportive image -->
+      <figure class="home-photo home-photo--wide" aria-label="Supportive birth and parenthood moment">
+        <img
+          src="{{ url_for('static', filename='photos/support.png') }}"
+          alt="Warm, natural light moment reflecting calm support"
+          loading="lazy"
+        />
+      </figure>
+
       <p class="section-body centered max">
         As a mother–daughter team, we blend lived experience and modern birth knowledge to provide thoughtful,
         personalized care. Together, we offer generational support that feels steady, informed, and deeply nurturing.
@@ -67,7 +76,37 @@
     </div>
   </section>
 
-  <!-- SERVICES OVERVIEW (Optional addition) -->
+  <!-- TESTIMONIAL (Image #3: mom & baby in album middle) -->
+  <section class="section home-testimonial" aria-label="Client testimonial">
+    <div class="container">
+      <div class="testimonial-card">
+        <div class="testimonial-grid">
+          <div class="testimonial-photo">
+            <img
+              src="{{ url_for('static', filename='photos/client.jpg') }}"
+              alt="Mother holding baby in warm natural light"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="testimonial-text">
+            <p class="testimonial-quote">
+              “Having my baby without my family present was frightening. I’ve always had loved ones by my
+              side during labor, and this time I felt alone.
+              <br><br>
+              Then Nicole stepped in. She felt like family — like my own mother was there with me. My fear
+              faded, replaced with peace and reassurance.
+              <br><br>
+              I am forever grateful for her love, care, and steady support.”
+            </p>
+            <p class="testimonial-name">— Hassenatu M.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES OVERVIEW -->
   <section class="section services-overview" aria-label="Birth and postpartum support overview">
     <div class="container closing-inner">
       <h2 class="section-title centered">Birth &amp; Postpartum Support</h2>
@@ -75,6 +114,19 @@
         From prenatal preparation to postpartum recovery, our services are designed to nurture your mind,
         support your body, and honor your soul.
       </p>
+    </div>
+  </section>
+
+  <!-- Image #4 (Album photo 4): closing photo before final CTA -->
+  <section class="section home-photo-break" aria-label="Closing image">
+    <div class="container">
+      <figure class="home-photo home-photo--tall">
+        <img
+          src="{{ url_for('static', filename='photos/upclose.png') }}"
+          alt="Warm, calm parenthood moment in natural light"
+          loading="lazy"
+        />
+      </figure>
     </div>
   </section>
 

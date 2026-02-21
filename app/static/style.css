@@ -99,10 +99,9 @@ img {
 .hero-bg {
   position: absolute;
   inset: 0;
-  /* Replace this URL with your real hero image */
-  background-image: url("images/hero.jpg");
+  background-image: url("photos/doulas.png");
   background-size: cover;
-  background-position: center;
+  background-position: center 30%;
   transform: scale(1.02);
 }
 
@@ -1158,12 +1157,6 @@ img {
    HOME UPDATES (add to style.css)
    ========================= */
 
-/* Hero: use warm professional mother–daughter photo + taupe overlay */
-.hero-bg {
-  /* Replace with your real team photo path */
-  background-image: url("images/hero-team.jpg");
-}
-
 /* Center the hero card within the existing grid (keeps original look) */
 .hero-text--centered {
   grid-column: 1 / -1;
@@ -1924,4 +1917,76 @@ img {
   .doula-card--reverse .doula-text {
     order: unset;
   }
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Home image blocks */
+.home-photo {
+  margin: 2rem auto 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: rgba(255,255,255,.35);
+}
+
+.home-photo img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  filter: saturate(.95) contrast(.98);
+}
+
+.home-photo--wide img {
+  height: clamp(260px, 34vh, 420px);
+}
+
+.home-photo--tall img {
+  height: clamp(300px, 40vh, 520px);
+}
+
+/* Testimonial */
+.home-testimonial .testimonial-card {
+  background: rgba(255,245,230,.70);
+  border: 1px solid rgba(139,107,94,.10);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+  padding: 1.25rem;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.testimonial-photo {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: rgba(255,255,255,.35);
+}
+
+.testimonial-photo img {
+  width: 100%;
+  height: clamp(260px, 34vh, 420px);
+  object-fit: cover;
+  display: block;
+}
+
+.testimonial-quote {
+  margin: 0 0 .75rem;
+  font-family: var(--font-quote);
+  color: var(--taupe);
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+.testimonial-name {
+  margin: 0;
+  font-family: var(--font-cta);
+  font-weight: 600;
+  color: #9CAF88;
 }
